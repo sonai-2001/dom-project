@@ -3,19 +3,19 @@ var unblocked=document.querySelector('#ubl')
 show();
 
 blocked.addEventListener('click',function(){
-    localStorage.setItem("block","false")
+    localStorage.setItem("block","true")
     show();
 
 })
 unblocked.addEventListener('click',function(){
     
-    localStorage.removeItem("block")
+    localStorage.setItem("block","false")
     show();
 
 })
 
 function show(){
-    if(localStorage.getItem("block")==="false")
+    if(localStorage.getItem("block")==="true")
    { document.querySelector('h1').textContent="blocked"}
    else{
     document.querySelector('h1').textContent="unblocked"
